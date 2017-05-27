@@ -36,7 +36,7 @@ Post Availability number:<br/>
 </div>
 <script>
 var app=angular.module('myApp', []);
-app.controller('myCtrl',function($scope){
+app.controller('myCtrl',function($scope,$http){
 $scope.names=[
 	{name:"Teacher for primary children",
 	salary:"600",
@@ -48,10 +48,25 @@ $scope.names=[
 	description:"needed good communication skills and a degree in phD.Hard working nature and working till late hours is encouraged.",
 	address:"adyar, chennai 600036",
 	number:"25"}];
-$scope.addNew=function(x){
+$http.get('')
+.success(function(data){
+$scope.names=data;
+console.log($scope.names);
+})
+.error(function(err){
+alert('Error');
+});
+$scope.addNew=function(){
 alert("Add new called!");
 $scope.names.push(x);
+$http.post('',$scope.current)
+.success(function(){
+$scope.names.push($scope.current);
 $scope.current={};
+})
+.error(function(err){
+alert('Error');
+});
 };
 
 $scope.remove = function(x){
