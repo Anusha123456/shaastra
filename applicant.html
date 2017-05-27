@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="app_portal">
+	<head>
+	<title>Applicant Portal</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	</head>
+	<body ng-controller="">
+	<div ng-repeat="post in app_portal.posts" style="text-align:center; padding:2em;background-color:orange;width:50% "  class="w3-panel  w3-round-xlarge w3-hover-shadow  w3-hover-text-white  w3-center">
+	<b>Name of the post:{{app_portal.post.name}}</b>
+	Salary: {{app_portal.post.salary | currency}}
+	<p>{{app_portal.post.job description}}</p>
+	Contact Address:<address>{{app_portal.post.contact information}}</address></br>
+	Contact E-mail: {{app_portal.post.contact e-mail}}</br>
+	<button ngshow="app_portal.post.canApply">Apply</button>
+	
+	</div>
+	
+	<script src="app.js"></script>
+	</body>
+</html>
