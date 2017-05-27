@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<nav style="background-color:black;color:white;text-align:center;padding:1em"><h1>POSTS GALLERY</h1></nav>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+<ul><li ng-repeat="x in names">
+<b>Name of the post</b>: <h2>{{x.name}}</h2>
+<b>Salary Offered</b>:{{x.salary |currency}}<br/>
+Job requirements: {{x.description}}<br/>
+Contact Information: <address>{{x.address}}</address>
+No. of posts required: {{x.number}}<br/>
+<a href="#name" ng-click="edit(x)">Edit Post</a>
+<button  ng-click="remove(x)">Delete Post</button>
+
+<button>List of Applicants</button></li></ul>
+<h2>Add New Post</h2>
+<form action="" method="post" enctype="multipart/form-data">
+<fieldset>
+Name of the post:<br/>
+<input type="text" id="name" ng-model="current.name" value="{{current.name}}"/><br/>
+Salary:<br/>
+<input type ="number" id="salary" ng-model="current.salary" value="{{current.salary}}"/><br/>
+Job description:<br/>
+<textarea id="desc" ng-model="current.description" value="{{current.description}}"></textarea><br/>
+Contact Information:<br/>
+<textarea id="add" ng-model="current.address" value="{{current.address}}"></textarea><br/>
+Post Availability number:<br/>
+<input type ="number" ng-model="current.number" value="{{current.number}}">
+<input type="submit" value="add" ng-click="addNew(current)">
+<button ng-click="save(current)">save</button>
+</fieldset>
+</form>
+</div>
+<script>
+var app=angular.module('myApp', []);
+app.controller('myCtrl',function($scope){
+$scope.names=[
+	{name:"Teacher for primary children",
+	salary:"600",
+	 description:"Needed good communication skills and passion towards teaching.Very caring attitude is encouraged.",
+	address:"kovilambakkam , chennai 600036", 
+	number:"30"},
+	{name:"Teacher for secondary children",
+	salary:"500",
+	description:"needed good communication skills and a degree in phD.Hard working nature and working till late hours is encouraged.",
+	address:"adyar, chennai 600036",
+	number:"25"}];
+$scope.addNew=function(x){
+alert("Add new called!");
+$scope.names.push(x);
+$scope.current={};
+};
+
+$scope.remove = function(x){
+var index =$scope.names.indexOf(x);
+alert("Deleting index:"+ index);
+$scope.names.splice(index,1);
+};
+
+$scope.edit= function(x){
+$scope.current = x;
+};
+$scope.save= function(x){
+$scope.current={};
+};
+$scope.current={};
+});
+
+</script>
+</body>
+</html>
