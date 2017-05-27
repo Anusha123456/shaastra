@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
+	<title>Sign Up Portal</title>
+	<link rel="stylesheet" type="text/css" href="normalize.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="script.js"></script>
+	<script src="https://use.fontawesome.com/d07d53baa9.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+</head>
+<body>
+	<div id="container">
+		<div id="Home">
+			<nav>
+				<ul>
+					<li><center><a href="#Home"><i class="fa fa-home">&nbsp;Home</i></a></center></li>
+					<li><center><a href="#About_Us"><i class="fa fa-binoculars">&#0032;&#0032;About Us</i></a></center></li>
+					<li><center><a href="#"><i class="fa fa-handshake-o">&#0032;HM</i></a></center></li>
+					<li><center><a href="#Contact_Us"><i class="fa fa-address-book">&#0032;Contact Us</i></a></center></li>
+					<li><center><a href="#More"><i class="fa fa-navicon">&#0032;More</i></a></center></li>
+				</ul>
+			</nav>
+		</div>
+		<div id="content">
+			<div class="parallax3">
+				<form method="post" action="insert.php">
+					<table style="margin: auto; padding-top: 50px;">
+						<tr><td>User Name:</td><td><input type="text" name="username" placeholder="User Name..."></td></tr>
+						<tr><td>First Name:</td><td><input type="text" name="firstname" placeholder="First Name..."></td>
+						<tr><td>Last Name:</td><td><input type="text" name="lastname" placeholder="Last Name..."></td>
+						<tr>
+							<td>Date of Birth:</td>
+							<td>
+								<input type="text" id="dobd" name="dobday" placeholder="DD" maxlength="2" style="width: 25px;">
+								<input type="text" id="dobm" name="dobmonth" placeholder="MM" maxlength="2" style="width: 25px;">
+								<input type="text" id="doby" name="dobyear" placeholder="YYYY" maxlength="4" style="width: 40px;">
+							</td>
+						</tr>
+						<tr><td>Email:</td><td><input type="text" name="email" placeholder="Your Email Id..."><br></td>
+						<tr><td>Phone No:</td><td><input type="text" name="phoneno" placeholder="Eg:- 987654321 with no leading '0'"></td></tr>
+						<tr><td>Password:</td><td><input type="password" name="password1" placeholder="minimimum 8 characters"></td></tr>
+						<tr><td>Confirm Password:&nbsp;&nbsp;</td><td><input type="password" name="password2" placeholder="Enter password again"></td></tr>
+						<tr><td colspan="2">&nbsp;</td></tr>
+						<!-- <tr><td colspan="2"><checkbox></checkbox>Hi</td></tr> -->
+						<tr><td colspan="2">&nbsp;</td></tr>
+						<tr><td colspan="2"><center><input type="submit" value="Sign Up!"></center></td></tr>
+						<tr><td colspan="2">&nbsp;</td></tr>
+						<tr><td colspan="2">&nbsp;</td></tr>
+						<tr><td colspan="2"><center><a href="signin.html" style="color: white;">Already have account! Click Here</a></center></td></tr>
+
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
